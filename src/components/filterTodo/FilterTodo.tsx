@@ -1,4 +1,5 @@
 import React from 'react'
+import Radio from '../../UI/Radio'
 interface FilterTodoProps {
   filterTodo(e: React.ChangeEvent<HTMLInputElement>): void
 }
@@ -6,8 +7,27 @@ interface FilterTodoProps {
 const FilterTodo: React.FC<FilterTodoProps> = ({ filterTodo }) => {
   return (
     <div className="p-4 bg-sky-500 flex gap-2">
-
-      <input
+      <Radio
+        value="all"
+        onChange={filterTodo}
+        isDefaultChecked={true}
+        name="filter-group"
+        label="All"
+      />
+      <Radio
+        value="completed"
+        onChange={filterTodo}
+        name="filter-group"
+        label="Completed"
+      />
+      <Radio
+        value="no-completed"
+        onChange={filterTodo}
+        name="filter-group"
+        label="No-completed"
+      />
+      
+      {/* <input
         type="radio"
         defaultChecked
         id="all"
@@ -39,10 +59,9 @@ const FilterTodo: React.FC<FilterTodoProps> = ({ filterTodo }) => {
         name="filter-group"
         onChange={(e) => filterTodo(e)}
       />
-      <label htmlFor="priority" className='cursor-pointer'>Priority</label>
+      <label htmlFor="priority" className='cursor-pointer'>Priority</label> */}
     </div>
   )
 }
-
 
 export default FilterTodo

@@ -85,7 +85,7 @@ const App = () => {
   return (
     <div className="App w-1/2 m-auto">
       <h1 className="text-center text-blue-light">TODO LIST</h1>
-      <FormAdd addTodo={addTodoHandler} />
+      <FormAdd addTodo={addTodoHandler}/>
       <SearchPanel
         changeSerchText={changeSerchTextHandler}
         serchText={serchText}
