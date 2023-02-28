@@ -6,13 +6,14 @@ interface FilterTodoProps {
 
 const FilterTodo: React.FC<FilterTodoProps> = ({ filterTodo }) => {
   return (
-    <div className="p-4 bg-sky-500 flex gap-2">
+    <div className="p-4 bg-sky-500 flex">
       <Radio
         value="all"
         onChange={filterTodo}
         isDefaultChecked={true}
         name="filter-group"
         label="All"
+        classNameLable='rounded-l-lg'
       />
       <Radio
         value="completed"
@@ -26,40 +27,13 @@ const FilterTodo: React.FC<FilterTodoProps> = ({ filterTodo }) => {
         name="filter-group"
         label="No-completed"
       />
-      
-      {/* <input
-        type="radio"
-        defaultChecked
-        id="all"
-        value="all"
-        name="filter-group"
-        onChange={(e) => filterTodo(e)}
-      />
-      <label htmlFor="all"  className='cursor-pointer'>All</label>
-      <input
-        type="radio"
-        id="completed"
-        value="compleated"
-        name="filter-group"
-        onChange={(e) => filterTodo(e)}
-      />
-      <label htmlFor="completed" className='cursor-pointer'>Completed</label>
-      <input
-        type="radio"
-        id="no-completed"
-        value="no completed"
-        name="filter-group"
-        onChange={(e) => filterTodo(e)}
-      />
-      <label htmlFor="no-completed" className='cursor-pointer'>No completed</label>
-      <input
-        type="radio"
-        id="priority"
+      <Radio
         value="priority"
+        onChange={filterTodo}
         name="filter-group"
-        onChange={(e) => filterTodo(e)}
+        label="Priority"
+        classNameLable='rounded-r-lg'
       />
-      <label htmlFor="priority" className='cursor-pointer'>Priority</label> */}
     </div>
   )
 }

@@ -28,15 +28,7 @@ const FormAdd: React.FC<FormAddProps> = ({ addTodo }) => {
         value={todoTitle}
         onChange={(e) => onChangeTitle(e)}
       />
-      <button
-        className="p-1 bg-orange-400"
-        // onClick={() => {
-        //   addTodo(todoTitle)
-        //   setTodoTitle('')
-        // }}
-      >
-        Add
-      </button>
+      <button className="p-1 bg-orange-400">Add</button>
     </form>
   )
 }

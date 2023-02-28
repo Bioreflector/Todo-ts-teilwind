@@ -2,18 +2,19 @@ import React from 'react'
 import { ITodo } from '../../interfeices'
 import { AiFillDelete } from 'react-icons/ai'
 import { AiFillStar } from 'react-icons/ai'
+import ButtonActionTodo from '../../UI/ButtonActionTodo'
 
 interface ToDoProps {
   todo: ITodo
   removeTodo(id: number): void
   toggleStatusTodo(id: number): void
-  togglePriority(id:number):void
+  togglePriority(id: number): void
 }
 const TodoItem: React.FC<ToDoProps> = ({
   todo,
   removeTodo,
   toggleStatusTodo,
-  togglePriority
+  togglePriority,
 }) => {
   return (
     <li
@@ -31,13 +32,19 @@ const TodoItem: React.FC<ToDoProps> = ({
           {todo.title}
         </p>
       </div>
-      <div className='flex gap-3'>
-        <button onClick={()=>togglePriority(todo.id)} className={todo.priority ? 'text-green-500' : 'text-gray-500'}>
+      <div className="flex gap-3">
+        <ButtonActionTodo
+          className={todo.priority ? 'text-green-500' : 'text-gray-500'}
+          title="Priority"
+          onClick={() => togglePriority(todo.id)}>
           <AiFillStar />
-        </button>
-        <button className="text-red-500" onClick={() => removeTodo(todo.id)}>
+        </ButtonActionTodo>
+        <ButtonActionTodo
+          className="text-red-500"
+          title="Delete"
+          onClick={() => removeTodo(todo.id)}>
           <AiFillDelete />
-        </button>
+        </ButtonActionTodo>
       </div>
     </li>
   )

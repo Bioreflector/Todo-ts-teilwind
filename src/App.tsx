@@ -65,9 +65,9 @@ const App = () => {
       case 'all':
         return [...state]
 
-      case 'compleated':
+      case 'completed':
         return state.filter((item) => item.complete)
-      case 'no completed':
+      case 'no-completed':
         return state.filter((item) => !item.complete)
       case 'priority':
         return state.filter((item) => item.priority)

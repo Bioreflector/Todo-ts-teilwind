@@ -15,9 +15,6 @@ const TodoList: React.FC<TodoListProps> = ({
   toggleStatusTodo,
   togglePriority
 }) => {
-  if (todos.length === 0) {
-    return <p className='text-center'>Todo empty</p>
-  }
   const result = todos.map((todo) => (
     <TodoItem
       key={todo.id}
@@ -28,9 +25,11 @@ const TodoList: React.FC<TodoListProps> = ({
     />
   ))
 
+  const content = result.length === 0 ? <p className='mt-8 text-center'>No todo found or the todo list empty</p>: result
+
   return (
     <ul>
-      {result}
+      {content}
     </ul>
   )
 }
